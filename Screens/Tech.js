@@ -4,7 +4,7 @@ import { StyleSheet, Text, View } from 'react-native'
 const Tech = () => {
     return (
         <View>
-            <Text></Text>
+            <Text>Technology</Text>
         </View>
     )
 }
