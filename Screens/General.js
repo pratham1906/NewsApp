@@ -13,6 +13,7 @@ const General = () => {
 Alert.alert('ERROR','Something Went wrong')
       }
     },[])
+    
    console.log(data)
     return (
         <View>
