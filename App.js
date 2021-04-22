@@ -3,11 +3,13 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import TopTabNavigator from './Navigators/TopNavigator'
 import {NavigationContainer} from '@react-navigation/native'
+import DataItem from './Components/DataItem'
+import General from './Screens/General'
 export default function App() {
   return (
-  
-      <TopTabNavigator/>
-
+  <View style={styles.container}>
+      <General/>
+</View>
   );
 }
 

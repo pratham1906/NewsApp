@@ -9,7 +9,7 @@ let articles=await axios.get(`${articles_url}?country=${country_code}&category=$
 )
 
 
-return articles.data
+return articles.data.articles
     }
     catch(error){
 throw error;

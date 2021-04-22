@@ -1,30 +1,32 @@
 import React from 'react'
-
-import {ListItem,Left,Thumbnail,Body,Text,Button} from 'react-native'
+import {StyleSheet,View,Text,Image} from 'react-native'
+import {Left,Thumbnail,Body,Button,Right} from 'native-base'
+import { ListItem, Avatar} from 'react-native-elements'
 
 
 
 const DataItem = (props) => {
-    const data=props.data;
+const {title,description,urlToImage}=props.data;
     return (
-        <ListItem thumbnail>
-        <Left>
-            <Thumbnail square source={{}}/>
-        </Left>
-<Body>
-    <Text></Text>
-    <Text></Text>
-</Body>
-<Right>
-    <Button transparent>
-        <Text></Text>
-    </Button>
-</Right>
+    <View style={{flex:1,justifyContent:'center',alignItems:'center',width:'100%'}}>
+        
+        <View style={{width:'100%',flexWrap:'wrap',borderWidth:2,borderRadius:12}}>
+            <View style={{flexDirection:'row',padding:12}}>
+            <Image source={{uri:urlToImage}} style={{width:40,height:40}}/>
+            <Text numberOfLines={3} style={{fontSize:12}}>{title}</Text>
+            </View>
+            <View>
+            <Text>{description}</Text>
+        </View>
+        </View>
+            
+          
+    </View>
 
-
-        </ListItem>
     )
 }
+
+
 
 export default DataItem
 

@@ -1,33 +1,37 @@
 import React,{useState,useEffect} from 'react'
-import { StyleSheet, Text, View ,Alert} from 'react-native'
+import {ActivityIndicator, StyleSheet, Text, View ,Alert,SafeAreaView,FlatList} from 'react-native'
 import {ListItem,Container,Thumbnail,Left,Body,Button, Content,List} from 'native-base'
 
-import {DataItem} from '../Components/DataItem'
+import DataItem from '../Components/DataItem'
 import {getArticles} from '../Service/news'
+
 const General = () => {
     const [isLoading,setIsLoading]=useState(true);
-    const [data,setData]=useState(null)
+    const [datas,setData]=useState(null)
     useEffect(() => {
-      getArticles().then(data=>{
+      getArticles().then(datas=>{
           setIsLoading(false);
-          setData(data);
+          setData(datas);
       }),error=>{
 Alert.alert('ERROR','Something Went wrong')
       }
     },[])
 
-   console.log(data)
+//     let view=isLoading?(<View>
+// <ActivityIndicator animating={isLoading}/>
+// <Text style={{marginTop:10}}>Please Wait.</Text>
+//     </View>):(
+        
+        
+//     )
+   console.log(datas)
     return (
-        <Container>
-            <Content>
-                <List dataArray={data}
-                renderRow={()=>{
-                    
-                }}/>
-                    
-                
-            </Content>
-        </Container>
+        <View style={{flex:1,justifyContent:'center',alignItems:'center'}}>
+       <FlatList data={datas}
+       renderItem={({item})=><DataItem data={item}/>}
+       />
+       
+     </View>   
     )
 }
 
