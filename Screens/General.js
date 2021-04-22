@@ -1,6 +1,8 @@
 import React,{useState,useEffect} from 'react'
 import { StyleSheet, Text, View ,Alert} from 'react-native'
+import {ListItem,Container,Thumbnail,Left,Body,Button, Content,List} from 'native-base'
 
+import {DataItem} from '../Components/DataItem'
 import {getArticles} from '../Service/news'
 const General = () => {
     const [isLoading,setIsLoading]=useState(true);
@@ -13,12 +15,19 @@ const General = () => {
 Alert.alert('ERROR','Something Went wrong')
       }
     },[])
-    
+
    console.log(data)
     return (
-        <View>
-            <Text></Text>
-        </View>
+        <Container>
+            <Content>
+                <List dataArray={data}
+                renderRow={()=>{
+                    
+                }}/>
+                    
+                
+            </Content>
+        </Container>
     )
 }
 
