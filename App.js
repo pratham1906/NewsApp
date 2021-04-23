@@ -7,9 +7,10 @@ import DataItem from './Components/DataItem'
 import General from './Screens/General'
 export default function App() {
   return (
-  <View style={styles.container}>
-      <General/>
-</View>
+   
+     <TopTabNavigator/>
+
+
   );
 }
 

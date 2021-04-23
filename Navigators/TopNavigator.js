@@ -10,7 +10,7 @@ const Tab = createMaterialTopTabNavigator();
 function TopTabNavigator() {
   return (
       <NavigationContainer>
-    <Tab.Navigator>
+    <Tab.Navigator tabBarOptions={{style:{backgroundColor:'#009387'}}}>
       <Tab.Screen name="General" component={General} />
       <Tab.Screen name="Business" component={Business} />
       <Tab.Screen name="Technology" component={Tech} />

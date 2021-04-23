@@ -5,9 +5,9 @@ import {ListItem,Container,Thumbnail,Left,Body,Button, Content,List} from 'nativ
 import DataItem from '../Components/DataItem'
 import {getArticles} from '../Service/news'
 
-const General = () => {
+const General = (props) => {
     const [isLoading,setIsLoading]=useState(true);
-    const [datas,setData]=useState(null)
+    const [data,setData]=useState(null)
     useEffect(() => {
       getArticles().then(datas=>{
           setIsLoading(false);
@@ -24,11 +24,11 @@ Alert.alert('ERROR','Something Went wrong')
         
         
 //     )
-   console.log(datas)
+   console.log(data)
     return (
-        <View style={{flex:1,justifyContent:'center',alignItems:'center'}}>
-       <FlatList data={datas}
-       renderItem={({item})=><DataItem data={item}/>}
+        <View>
+       <List dataArray={data}
+       renderRow={(item)=>{return(<DataItem data={item}/>)}}
        />
        
      </View>   
