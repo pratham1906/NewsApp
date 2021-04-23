@@ -26,12 +26,11 @@ Alert.alert('ERROR','Something Went wrong')
 //     )
    console.log(data)
     return (
-        <View>
+      
        <List dataArray={data}
        renderRow={(item)=>{return(<DataItem data={item}/>)}}
        />
-       
-     </View>   
+     
     )
 }
 
